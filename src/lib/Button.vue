@@ -1,28 +1,24 @@
 <template>
-  <div :size="size">
-  <button v-bind="rest">
- <slot/>
-<!--    插槽，用户传进来的&ndash;-->
+  <button class="pear-button" :class="`theme-${theme}`">
+    <slot/>
   </button>
-  </div>
 </template>
 
 <script lang="ts">
 
-export default  {
-  inheritAttrs:false,
+export default {
   props:{
-  },
-  setup(props,context){
-    const {size,...rest}=context.attrs
-    return {size,rest}
+    theme: {
+      type:String,
+      default:'button' //没有theme就默认为button
+    }
   }
-}
+};
 </script>
 
 
 <style lang="scss" scoped>
-div{
+div {
   border: 1px solid red;
 }
 </style>
