@@ -1,5 +1,7 @@
 <template>
-  <div>tabs文档</div>
+  <div>
+    tabs文档
+  </div>
 </template>
 
 <script lang="ts">
