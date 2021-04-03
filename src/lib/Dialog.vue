@@ -1,4 +1,5 @@
 <template>
+  <template v-if="visible">
   <div class="pear-dialog-overlay"></div>
   <div class="pear-dialog-wrapper">
     <div class="pear-dialog">
@@ -13,6 +14,7 @@
       </footer>
     </div>
   </div>
+  </template>
 </template>
 
 
@@ -20,6 +22,12 @@
 import Button from './Button.vue';
 
 export default {
+  props:{
+    visible:{
+      type:Boolean,
+      default:false
+    }
+  },
   components: {Button}
 };
 </script>
