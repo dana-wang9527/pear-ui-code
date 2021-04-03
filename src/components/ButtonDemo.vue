@@ -2,11 +2,17 @@
   <div>
     button文档
   </div>
-  <h1>示例</h1>
+  <h1>示例1</h1>
   <Button>你好</Button>
   <Button theme="button">你好</Button>
   <Button theme="link">你好</Button>
   <Button theme="text">你好</Button>
+  <h1>示例2</h1>
+  <div>
+    <Button size="big">大大大</Button>
+    <Button>普普通通</Button>
+    <Button size="small">小小小</Button>
+  </div>
 </template>
 
 <script lang="ts">
