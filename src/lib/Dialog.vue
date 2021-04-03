@@ -3,11 +3,11 @@
     <div class="pear-dialog-overlay" @click="onClickOverlay"></div>
     <div class="pear-dialog-wrapper">
       <div class="pear-dialog">
-        <header>标题
+        <header>
+       <slot name="title"/>
           <span @click="close" class="pear-dialog-close"></span></header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="context"/>
         </main>
         <footer>
           <Button level="main" @click="ok">Ok</Button>
