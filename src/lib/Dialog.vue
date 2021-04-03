@@ -8,7 +8,7 @@
        <slot name="title"/>
           <span @click="close" class="pear-dialog-close"></span></header>
         <main>
-          <slot name="context"/>
+          <slot name="content"/>
         </main>
         <footer>
           <Button level="main" @click="ok">Ok</Button>
@@ -47,7 +47,7 @@ export default {
       context.emit('update:visible', false);
     };
     const onClickOverlay = () => {
-      if (props.closeOnClickOverlay) {
+      if (props.closeOnClickOverlay&&props.closeOnClickOverlay()!==false) {
         close();
       }
     };
@@ -57,7 +57,7 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit('cancel');
+      props.cancel&&props.cancel()
       close();
     };
     return {close, onClickOverlay, ok, cancel};
