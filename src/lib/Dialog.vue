@@ -1,5 +1,6 @@
 <template>
   <template v-if="visible">
+    <Teleport to="body">
     <div class="pear-dialog-overlay" @click="onClickOverlay"></div>
     <div class="pear-dialog-wrapper">
       <div class="pear-dialog">
@@ -15,6 +16,7 @@
         </footer>
       </div>
     </div>
+    </Teleport>
   </template>
 </template>
 
