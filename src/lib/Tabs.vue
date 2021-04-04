@@ -1,10 +1,12 @@
 <template>
   <div class="pear-tabs">
     <div class="pear-tabs-nav">
-      <div class="pear-tabs-nav-item" @click="select(t)" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index">{{t}}</div>
+      <div class="pear-tabs-nav-item" @click="select(t)" :class="{selected:t===selected}" v-for="(t,index) in titles"
+           :key="index">{{ t }}
+      </div>
     </div>
     <div class="pear-tabs-content">
-      <component class="pear-tabs-content-item" :is="current" />
+      <component class="pear-tabs-content-item" :class="{selected: c.props.title === selected }" v-for="c in defaults" :is="c"/>
     </div>
   </div>
 </template>
@@ -15,9 +17,9 @@ import Tab from './Tab.vue';
 import {computed} from 'vue';
 
 export default {
-  props:{
+  props: {
     selected: {
-      type:String
+      type: String
     }
   },
   setup(props, context) {
@@ -27,17 +29,18 @@ export default {
         throw new Error('Tabs 子标签必须是 Tab');
       }
     });
-    const current=computed(()=>{
-      return defaults.filter((tag)=>{
-      return tag.props.title===props.selected
-    })[0]})
+    const current = computed(() => {
+      return defaults.filter((tag) => {
+        return tag.props.title === props.selected;
+      })[0];
+    });
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    const select=(title:string)=>{
-      context.emit('update:selected',title)
-    }
-    return {defaults, titles,current,select};
+    const select = (title: string) => {
+      context.emit('update:selected', title);
+    };
+    return {defaults, titles, current, select};
   }
 };
 </script>
@@ -69,6 +72,14 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
+
+    &-item {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
