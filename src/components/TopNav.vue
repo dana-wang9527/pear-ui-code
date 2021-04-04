@@ -26,13 +26,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color:#007974;
 .topNav {
+  color: $color;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  background: pink;
   display: flex;
   padding: 16px;
   justify-content:center;
