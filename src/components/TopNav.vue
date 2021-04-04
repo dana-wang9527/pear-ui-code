@@ -1,6 +1,10 @@
 <template>
   <div class="topNav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-pear"></use>
+      </svg>
+    </div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -26,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color:#007974;
+$color: #007974;
 .topNav {
   color: $color;
   position: fixed;
@@ -36,12 +40,16 @@ $color:#007974;
   z-index: 10;
   display: flex;
   padding: 16px;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg{
+      width:32px;
+      height: 32px;
+    }
   }
 
   > .menu {
@@ -53,7 +61,8 @@ $color:#007974;
       margin: 0 1em;
     }
   }
-  >.toggleAside{
+
+  > .toggleAside {
     width: 24px;
     height: 24px;
     background: whitesmoke;
@@ -63,10 +72,17 @@ $color:#007974;
     transform: translateY(-50%);
     display: none;
   }
+
   @media (max-width: 500px) {
-    >.menu{display:none;}
-    >.logo{margin: 0 auto}
-    >.toggleAside{ display: inline-block;}
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto
+    }
+    > .toggleAside {
+      display: inline-block;
+    }
   }
 }
 </style>

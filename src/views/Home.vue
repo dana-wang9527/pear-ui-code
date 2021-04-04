@@ -10,23 +10,41 @@
       </p>
     </div>
   </div>
+  <div class="features">
+    <svg class="icon">
+      <use xlink:href="#icon-vue"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-ts"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-light"></use>
+    </svg>
+  </div>
 </template>
 
 
 <script lang="ts">
-import TopNav from "../components/TopNav.vue";
+import TopNav from '../components/TopNav.vue';
 
 export default {
   components: {TopNav}
-}
+};
 </script>
 
 
 <style lang="scss" scoped>
 $green: #02bcb0;
-$color:#007974;
-.topNavAndBanner{
+$color: #007974;
+.topNavAndBanner {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+}
+
+.features{
+  > svg{
+    width:64px;
+    height: 64px;
+  }
 }
 .banner {
   color: $color;
@@ -35,16 +53,21 @@ $color:#007974;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  > .actions{
+
+  > .actions {
     padding: 8px 0;
+
     a {
-      margin:0 8px;
-      background:$green;
+      margin: 0 8px;
+      background: $green;
       color: white;
       display: inline-block;
-      border-radius:4px;
+      border-radius: 4px;
       padding: 8px 24px;
-      &:hover{}
+
+      &:hover {
+      }
+
       text-decoration: none;
     }
   }
