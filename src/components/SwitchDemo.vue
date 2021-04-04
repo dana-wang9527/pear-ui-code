@@ -4,25 +4,25 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-      <Switch1Demo/>
+        <Component :is="Switch1Demo"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>{{Switch1Demo.__sourceCode}}</pre>
+        <pre>{{Switch1Demo.__demo}}</pre>
       </div>
     </div>
     <div class="demo">
       <h2>支持 disabled </h2>
       <div class="demo-component">
-        <Switch2Demo/>
+        <Component :is="Switch2Demo"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>{{Switch2Demo.__sourceCode}}</pre>
+        <pre>{{Switch2Demo.__demo}}</pre>
       </div>
     </div>
   </div>
