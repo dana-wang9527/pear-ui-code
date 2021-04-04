@@ -52,7 +52,7 @@ $green: #02bcb0;
 $color: #007974;
 .topNavAndBanner {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
-  clip-path: ellipse(80% 50% at 50% 40%);
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
 
 .features {
