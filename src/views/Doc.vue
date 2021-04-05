@@ -73,7 +73,7 @@ export default {
       bottom: 0;
       margin-top: 80px;
       height: auto;
-      width: 260px;
+      width: 200px;
       overflow-x: hidden;
       overflow-y: scroll;
       border-right: 1px solid #e8e8e8;
@@ -101,6 +101,7 @@ export default {
             &:hover {
               background: #e5f2fa;
               border-bottom: none;
+              text-decoration: none;
             }
           }
           .router-link-active {
