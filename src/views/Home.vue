@@ -2,8 +2,8 @@
   <div class="topNavAndBanner">
     <TopNav/>
     <div class="banner">
-      <h1>梨子ui</h1>
-      <h2>一个厉害的 UI 框架</h2>
+      <h1>梨子UI官网</h1>
+      <h2>简约而不简单</h2>
       <p class="actions">
         <a href="https://github.com">GitHub</a>
         <router-link to="/doc">开始</router-link>
@@ -53,6 +53,14 @@ $color: #007974;
 .topNavAndBanner {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
+  ::v-deep(.topNav) {
+    background: transparent;
+  }
+@media (max-width: 500px) {
+  ::v-deep(.topNav) {
+    background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  }
+}
 }
 
 .features {
@@ -60,16 +68,16 @@ $color: #007974;
   padding: 0 16px;
   @media (min-width: 800px) {
     width: 800px;
-    >ul {
-      >li {
+    > ul {
+      > li {
         width: 50%;
       }
     }
   }
   @media (min-width: 1200px) {
     width: 1200px;
-    >ul {
-      >li {
+    > ul {
+      > li {
         width: 33.3333%;
       }
     }
@@ -78,6 +86,7 @@ $color: #007974;
   > ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     > li {
       margin: 16px 0;
@@ -102,7 +111,8 @@ $color: #007974;
       }
 
       > p {
-        grid-area: text
+        grid-area: text;
+        font-size: 18px;
       }
     }
   }
@@ -110,14 +120,30 @@ $color: #007974;
 
 .banner {
   color: $color;
-  padding: 100px 0;
+  padding: 120px  20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
+ > h1 {
+    text-align: center;
+    font-size: 34px;
+    line-height: 52px;
+  }
+ > h2 {
+    text-align: right;
+    padding-left: 200px;
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
   > .actions {
     padding: 8px 0;
+    font-size: 18px;
+    margin-top: 16px;
+    text-align: center;
 
     a {
       margin: 0 8px;
@@ -128,9 +154,10 @@ $color: #007974;
       padding: 8px 24px;
 
       &:hover {
+        text-decoration: none;
+
       }
 
-      text-decoration: none;
     }
   }
 }

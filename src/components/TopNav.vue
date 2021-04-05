@@ -46,17 +46,20 @@ $color: #007974;
   position: fixed;
   top: 0;
   left: 0;
+  right:0;
   width: 100%;
   z-index: 20;
   display: flex;
   padding: 16px;
   justify-content: center;
   align-items: center;
+  background: #fff;
+  box-shadow: 0 5px 5px rgb(51 51 51 / 10%);
 
   > .logo {
     max-width: 6em;
     margin-right: auto;
-
+    margin-left: 50px;
     > svg {
       width: 32px;
       height: 32px;
@@ -89,7 +92,7 @@ $color: #007974;
       display: none;
     }
     > .logo {
-      margin: 0 auto
+      margin: 0 auto;
     }
     > .toggleAside {
       display: inline-block;
